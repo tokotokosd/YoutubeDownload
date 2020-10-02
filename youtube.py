@@ -105,7 +105,7 @@ def download_playlist(url, download_path):
                                     nooverwrites=True,
                                     source_address='0.0.0.0',
                                     ignoreerrors=True,
-                                   retries='infinite'
+                                   retries=9999
                                     # quiet=True
                                     ))
         except youtube_dl.utils.DownloadError:
@@ -117,7 +117,7 @@ def download_playlist(url, download_path):
                                         nooverwrites=True,
                                         source_address='0.0.0.0',
                                        ignoreerrors=True,
-                                        retries='infinite'
+                                        retries=9999
                                        # quiet=True
                                        ))
             except:
@@ -134,7 +134,7 @@ def download_video(url, download_path):
                                cookiefile="cookies.txt",
                                nooverwrites=True,
                                source_address='0.0.0.0',
-                                retries='infinite',
+                                retries=9999,
                                ignoreerrors=True,
                                # quiet=True
                                ))
@@ -147,7 +147,7 @@ def download_video(url, download_path):
                                     nooverwrites=True,
                                source_address='0.0.0.0',
                                    ignoreerrors=True,
-                                   retries='infinite',
+                                   retries=9999
                                    # quiet=True
                                    ))
         except:
