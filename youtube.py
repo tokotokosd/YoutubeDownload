@@ -103,8 +103,9 @@ def download_playlist(url, download_path):
                                     outtmpl=os.path.join(download_path, f'%(title)s-{fmt_name}.%(ext)s'),
                                    cookiefile="cookies.txt",
                                     nooverwrites=True,
-                               source_address='0.0.0.0'
-                                    # ignoreerrors=True,
+                                    source_address='0.0.0.0',
+                                    ignoreerrors=True,
+                                   retries='infinite'
                                     # quiet=True
                                     ))
         except youtube_dl.utils.DownloadError:
@@ -114,8 +115,9 @@ def download_playlist(url, download_path):
                                        outtmpl=os.path.join(download_path, f'%(title)s-best.mp4'),
                                        cookiefile="cookies.txt",
                                         nooverwrites=True,
-                               source_address='0.0.0.0'
-                                       # ignoreerrors=True,
+                                        source_address='0.0.0.0',
+                                       ignoreerrors=True,
+                                        retries='infinite'
                                        # quiet=True
                                        ))
             except:
@@ -131,8 +133,9 @@ def download_video(url, download_path):
                                outtmpl=os.path.join(download_path, f'%(title)s-{fmt_name}.%(ext)s'),
                                cookiefile="cookies.txt",
                                nooverwrites=True,
-                               source_address='0.0.0.0'
-                               # ignoreerrors=True,
+                               source_address='0.0.0.0',
+                                retries='infinite',
+                               ignoreerrors=True,
                                # quiet=True
                                ))
     except youtube_dl.utils.DownloadError:
@@ -142,8 +145,9 @@ def download_video(url, download_path):
                                    outtmpl=os.path.join(download_path, f'%(title)s-best.mp4'),
                                    cookiefile = "cookies.txt",
                                     nooverwrites=True,
-                               source_address='0.0.0.0'
-                                   # ignoreerrors=True,
+                               source_address='0.0.0.0',
+                                   ignoreerrors=True,
+                                   retries='infinite',
                                    # quiet=True
                                    ))
         except:
@@ -155,6 +159,8 @@ for i in playlists_url:
     download_playlist(i, download_path)
 
 for i in video_urls:
+    if i == "":
+        break
     videos = get_videos(i)
     path = os.path.join(download_path, i.replace("https://www.youtube.com/c/", "").replace("/videos", ""))
     # create dir
