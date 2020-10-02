@@ -102,7 +102,8 @@ def download_playlist(url, download_path):
             download(cur_url, dict(format=fmt+'+140',
                                     outtmpl=os.path.join(download_path, f'%(title)s-{fmt_name}.%(ext)s'),
                                    cookiefile="cookies.txt",
-                                    nooverwrites=True
+                                    nooverwrites=True,
+                               source_address='0.0.0.0'
                                     # ignoreerrors=True,
                                     # quiet=True
                                     ))
@@ -112,7 +113,8 @@ def download_playlist(url, download_path):
                 download(cur_url, dict(format='bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio',
                                        outtmpl=os.path.join(download_path, f'%(title)s-best.mp4'),
                                        cookiefile="cookies.txt",
-                                        nooverwrites=True
+                                        nooverwrites=True,
+                               source_address='0.0.0.0'
                                        # ignoreerrors=True,
                                        # quiet=True
                                        ))
@@ -129,7 +131,8 @@ def download_video(url, download_path):
         download(cur_url, dict(format=fmt + '+140',
                                outtmpl=os.path.join(download_path, f'%(title)s-{fmt_name}.%(ext)s'),
                                cookiefile="cookies.txt",
-                               nooverwrites=True
+                               nooverwrites=True,
+                               source_address='0.0.0.0'
                                # ignoreerrors=True,
                                # quiet=True
                                ))
@@ -139,7 +142,8 @@ def download_video(url, download_path):
             download(cur_url, dict(format='bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio',
                                    outtmpl=os.path.join(download_path, f'%(title)s-best.mp4'),
                                    cookiefile = "cookies.txt",
-                                    nooverwrites=True
+                                    nooverwrites=True,
+                               source_address='0.0.0.0'
                                    # ignoreerrors=True,
                                    # quiet=True
                                    ))
