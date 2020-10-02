@@ -101,7 +101,8 @@ def download_playlist(url, download_path):
         try:
             download(cur_url, dict(format=fmt+'+140',
                                     outtmpl=os.path.join(download_path, f'%(title)s-{fmt_name}.%(ext)s'),
-                                   cookiefile="cookies.txt"
+                                   cookiefile="cookies.txt",
+                                    nooverwrites=True
                                     # ignoreerrors=True,
                                     # quiet=True
                                     ))
@@ -110,7 +111,8 @@ def download_playlist(url, download_path):
             try:
                 download(cur_url, dict(format='bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio',
                                        outtmpl=os.path.join(download_path, f'%(title)s-best.mp4'),
-                                       cookiefile="cookies.txt"
+                                       cookiefile="cookies.txt",
+                                        nooverwrites=True
                                        # ignoreerrors=True,
                                        # quiet=True
                                        ))
@@ -126,7 +128,8 @@ def download_video(url, download_path):
     try:
         download(cur_url, dict(format=fmt + '+140',
                                outtmpl=os.path.join(download_path, f'%(title)s-{fmt_name}.%(ext)s'),
-                               cookiefile="cookies.txt"
+                               cookiefile="cookies.txt",
+                               nooverwrites=True
                                # ignoreerrors=True,
                                # quiet=True
                                ))
@@ -135,7 +138,8 @@ def download_video(url, download_path):
         try:
             download(cur_url, dict(format='bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio',
                                    outtmpl=os.path.join(download_path, f'%(title)s-best.mp4'),
-                                   cookiefile = "cookies.txt"
+                                   cookiefile = "cookies.txt",
+                                    nooverwrites=True
                                    # ignoreerrors=True,
                                    # quiet=True
                                    ))
