@@ -67,6 +67,7 @@ def get_videos(url):
     return videos
 
 def download(url: str, options: dict):
+    print(options)
     with youtube_dl.YoutubeDL(options) as ydl:
         ydl.download([url])
 
