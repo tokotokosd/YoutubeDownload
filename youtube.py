@@ -122,7 +122,6 @@ def download_playlist(url, download_path):
                 pass
 
 def download_video(url, download_path):
-    list = requests.get("https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&channelId=UCeLHszkByNZtPKcaVXOCOQQ&maxResults=25&key=AIzaSyDRltTioQ75l_55v9aPVvUrNO-4seYm55M")
     vquality=  {'audio' :'140', '144' : '160', '240' : '133', '360' : '134', '480' : '135', '720' : '136', '1080' : '137','4k':'313'}
     tuple_format = vquality[qual]
     cur_url = url
